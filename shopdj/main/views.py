@@ -1,14 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def index(request):
-          
+def base(request):
     context ={
-        'title': 'home',
-        'content':'welcome to the home page',
-        'list': [1,2,3],
-        'gor': 'Just',
-        'user': False,
+        'title': 'Base Page',
+        'content': 'Best Shop Page',
+    }
+    return render(request, 'main/base.html', context)
+
+def index(request):
+    context ={
+        'title': 'Home Page',
+        'content': 'Best Shop Page',
     }
     return render(request, 'main/index.html', context)
 
